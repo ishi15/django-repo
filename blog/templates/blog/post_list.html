@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  
-    <title>django blog</title>
-</head>
-<body>
-  <header><h1><a href="/"> my first blog post </a></h1></header>
-  <time>published:1st jan 2021 1 am</time> 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro eius quod facilis fuga enim doloribus nobis explicabo a esse non perferendis, maxime, incidunt magnam ipsa officia quam! Aliquam, nulla?</p> 
-  <header><h1><a href=" ">my second blog post</a></h1></header>
-  <time>published:1st feb 2021 1 am</time> 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro eius quod facilis fuga enim doloribus nobis explicabo a esse non perferendis, maxime, incidunt magnam ipsa officia quam! Aliquam, nulla?</p> 
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </header>
 
 
-</body>
+    {% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+
+        {% comment %} <article> {% endcomment %}
+            {% comment %} <time>published: 14.06.2014, 12:14</time> {% endcomment %}
+            {% comment %} <h2><a href="">My second post</a></h2> {% endcomment %}
+            {% comment %} <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p> {% endcomment %}
+        {% comment %} </article> {% endcomment %}
+    </body>
 </html>
+
+
+
+
+
